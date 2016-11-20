@@ -1,0 +1,25 @@
+{
+  "name": "hoersuppe_live_calander",
+  "version": "1.0.0",
+  "description": "Concept to fetch and store live shows using the hoersuppe API",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://B-Lach@github.com/B-Lach/hoersuppe_live_calander.git"
+  },
+  "keywords": [
+    "hoersuppe",
+    "api",
+    "live",
+    "calander"
+  ],
+  "author": "Benny Lach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B-Lach/hoersuppe_live_calander/issues"
+  },
+  "homepage": "https://github.com/B-Lach/hoersuppe_live_calander#readme"
+}
