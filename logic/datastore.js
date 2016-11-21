@@ -84,7 +84,41 @@ var datastore = function(callback) {
 
         for (event of events) {
           var podcast = channelCollection.findOne({slug: event.podcast})
-          data.push({event: event, podcast: podcast})
+
+          var outputPodcast = {
+            id: podcast.ID,
+            title: podcast.title,
+            description: podcast.description,
+            url: podcast.url,
+            feedurl: podcast.feedurl,
+            imageurl: podcast.imageurl,
+            subtitle: podcast.subtitle,
+            chat_server: podcast.chat_server,
+            chat_channel: podcast.chat_channel,
+            chat_url: podcast.chat_url,
+            rundfunk: podcast.rundfunk,
+            otitle: podcast.otitle,
+            twitter: podcast.twitter,
+            adn: podcast.adn,
+            feature: podcast.feature,
+            featuretext: podcast.featuretext,
+            payment: podcast.payment,
+            flattrid: podcast.flattrid,
+            adnbroadcast: podcast.adnbroadcast,
+            alternates: podcast.alternates,
+            contact: podcast.contact
+          }
+          var outputEvent = {
+            id: event.id,
+            title: event.title,
+            url: event.url,
+            streamurl: event.streamurl,
+            livedate: event.livedate,
+            duration: event.duration,
+            state: event.state,
+            podcast: outputPodcast
+          }
+          data.push(outputEvent)
         }
         resolve(data)
       })
