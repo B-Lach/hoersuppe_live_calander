@@ -28,7 +28,7 @@ var api = function() {
           host: 'hoersuppe.de',
           // Using a static time range is ok for a concept, i guess
           // On production start und end date should be generated dynamically
-          path: '/api/?action=getL_ive&dateStart=2016-11-20&dateEnd=2016-11-30',
+          path: '/api/?action=getLive&dateStart=2016-11-20&dateEnd=2016-11-30',
           port: 80,
           method: 'GET'
       })

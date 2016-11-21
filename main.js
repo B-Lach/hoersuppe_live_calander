@@ -1,7 +1,8 @@
+var API = require('./logic/api.js')
 var api = new API()
 
-api.fetchChannel('freak-show')
-.then( function(data) {
+api.fetchLiveData()
+.then(function(data) {
   console.log(data)
 })
 .catch(function(error) {
