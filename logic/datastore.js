@@ -77,18 +77,16 @@ var datastore = function(callback) {
     var promise = new Promise(function(resolve, reject) {
       Promise.all([eventCollection(), channelCollection()])
       .then(function(result) {
+
         var events = result[0].data
         var channelCollection = result[1]
+        var data = []
 
         for (event of events) {
-          event.podcast = channelCollection.findOne({slug: event.podcast})
-          // Delete loki specific k/v pairs from result
-          delete event.podcast['$loki']
-          delete event.podcast.meta
-          delete event['$loki']
-          delete event.meta
+          var podcast = channelCollection.findOne({slug: event.podcast})
+          data.push({event: event, podcast: podcast})
         }
-        resolve(events)
+        resolve(data)
       })
       .catch(reject)
     })
